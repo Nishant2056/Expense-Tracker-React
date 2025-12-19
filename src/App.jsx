@@ -29,7 +29,9 @@ function App() {
       </center>
       <div className="expense-item d-flex flex-wrap gap-4 mt-4">
         {expenses.length === 0 ? (
-          <p>Congratulations you saved alot of money tooday!!!</p>
+          <p style={{ marginLeft: "auto", marginRight: "auto" }}>
+            Congratulations you saved alot of money tooday!!!
+          </p>
         ) : (
           expenses.map((exp, idx) => (
             <ExpenseItem
