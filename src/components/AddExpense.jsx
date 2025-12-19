@@ -39,8 +39,8 @@ const AddExpense = ({ handleExpenses }) => {
       </div>
       <div className="col-2">
         <input
-          type="text"
-          placeholder="Enter the price of the item..."
+          type="number"
+          placeholder="Enter the price of the item in Nepali Rupees..."
           value={price}
           onChange={getPrice}
         />
