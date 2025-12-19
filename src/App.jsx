@@ -27,7 +27,7 @@ function App() {
         </h1>
         <AddExpense handleExpenses={handleExpenses}></AddExpense>
       </center>
-      <div className="expense-item d-flex flex-wrap justify-content-center gap-4 m-4">
+      <div className="expense-item d-flex flex-wrap gap-4 mt-4">
         {expenses.length === 0 ? (
           <p>Congratulations you saved alot of money tooday!!!</p>
         ) : (
