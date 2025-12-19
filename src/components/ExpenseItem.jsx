@@ -1,4 +1,4 @@
-const ExpenseItem = ({ item, date, price, handleDeleteButton }) => {
+const ExpenseItem = ({ id, item, date, price, handleDeleteButton }) => {
   return (
     <div className="card" style={{ width: "18rem" }}>
       <div className="card-body">
@@ -8,7 +8,7 @@ const ExpenseItem = ({ item, date, price, handleDeleteButton }) => {
         <div className="d-flex gap-2 justify-content-center">
           <button
             className="col-6 btn btn-danger"
-            onClick={() => handleDeleteButton(item)}
+            onClick={() => handleDeleteButton(id)}
           >
             Delete
           </button>

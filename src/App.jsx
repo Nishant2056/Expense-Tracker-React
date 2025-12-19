@@ -11,9 +11,10 @@ function App() {
     setExpenses([...expenses, newExpenses]);
   };
 
-  const handleDeleteButton = (item) => {
-    const updatedExpenses = expenses.filter((exp) => exp.item !== item);
-    setExpenses(updatedExpenses);
+  const handleDeleteButton = (id) => {
+    setExpenses(expenses.filter((exp) => exp.id !== id));
+    // const updatedExpenses = expenses.filter((exp) => exp.item !== item);
+    // setExpenses(updatedExpenses);
     // setExpenses((prevExpenses) => {
     //   prevExpenses.filter((expense) => expense.item !== item);
     // });
@@ -33,9 +34,10 @@ function App() {
             Enter Your Expenses for Today!!!
           </p>
         ) : (
-          expenses.map((exp, idx) => (
+          expenses.map((exp) => (
             <ExpenseItem
-              key={exp.id || idx}
+              key={exp.id}
+              id={exp.id}
               item={exp.item}
               date={exp.date}
               price={exp.price}

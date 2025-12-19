@@ -17,7 +17,7 @@ const AddExpense = ({ handleExpenses }) => {
   };
 
   const buttonIsClicked = () => {
-    const expenseData = { item, date, price };
+    const expenseData = { id: Date.now(), item, date, price };
     handleExpenses(expenseData);
     setItem("");
     setDate("");
