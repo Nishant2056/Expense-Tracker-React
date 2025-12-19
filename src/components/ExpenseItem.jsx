@@ -6,11 +6,12 @@ const ExpenseItem = ({ item, date, price, handleDeleteButton }) => {
         <p className="card-text">Date: {date}</p>
         <p className="card-text">{price}</p>
         <button
-          className="btn btn-danger"
+          className="col-6 btn btn-danger"
           onClick={() => handleDeleteButton(item)}
         >
           Delete
         </button>
+        <button className="col-6 btn btn-warning">Edit</button>
       </div>
     </div>
   );
