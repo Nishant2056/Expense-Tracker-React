@@ -1,0 +1,49 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import AddExpense from "./components/AddExpense";
+import ExpenseItem from "./components/ExpenseItem";
+import { useState } from "react";
+
+function App() {
+  const [expenses, setExpenses] = useState([]);
+  const handleExpenses = (newExpenses) => {
+    console.log(newExpenses);
+    setExpenses([...expenses, newExpenses]);
+  };
+
+  const handleDeleteButton = (item) => {
+    const updatedExpenses = expenses.filter((exp) => exp.item !== item);
+    setExpenses(updatedExpenses);
+    // setExpenses((prevExpenses) => {
+    //   prevExpenses.filter((expense) => expense.item !== item);
+    // });
+  };
+
+  return (
+    <>
+      <center>
+        <h1 style={{ fontSize: "50px", color: "Black", marginBottom: "30px" }}>
+          Expense Tracker
+        </h1>
+        <AddExpense handleExpenses={handleExpenses}></AddExpense>
+      </center>
+      <div className="expense-item d-flex flex-wrap justify-content-center gap-4 m-4">
+        {expenses.length === 0 ? (
+          <p>Congratulations you saved alot of money tooday!!!</p>
+        ) : (
+          expenses.map((exp, idx) => (
+            <ExpenseItem
+              key={exp.id || idx}
+              item={exp.item}
+              date={exp.date}
+              price={exp.price}
+              handleDeleteButton={handleDeleteButton}
+            />
+          ))
+        )}
+      </div>
+    </>
+  );
+}
+
+export default App;
